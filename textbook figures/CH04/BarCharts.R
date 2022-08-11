@@ -7,6 +7,7 @@
 
 par(mfrow=c(2,2)) #, mai = c(0.9, 0.8, 0.3, 0.1), oma = c(0.1, 0.1, 0.1, 0.1)
 
+# simple bar plot
 total = Titanic[,1,2,1]+Titanic[,1,2,2]+Titanic[,1,1,1]+Titanic[,1,1,2]+Titanic[,2,2,1]+Titanic[,2,2,2]+Titanic[,2,1,1]+Titanic[,2,1,2]
 dataAdult = as.data.frame(total) # merge adult survivors + non survivors
 barplot(total, data = dataAdult,
@@ -15,7 +16,7 @@ barplot(total, data = dataAdult,
         ylab = "Number of people", 
         xlab = "Ticket Class")
 
-
+# stacked bar plot
 dataAdult = as.data.frame(Titanic[,,2,1]+Titanic[,,2,2]+Titanic[,,1,1]+Titanic[,,1,2]) # merge survivors + non survivors
 barplot(Freq ~ Sex + Class, data = dataAdult, legend.text = TRUE, args.legend = list(x = 'topleft',bty = "n"),
         col = c("#68829E", "#598234"),
@@ -23,6 +24,7 @@ barplot(Freq ~ Sex + Class, data = dataAdult, legend.text = TRUE, args.legend = 
         ylab = "Number of people", 
         xlab = "Ticket Class")
 
+# Grouped bar plot 1
 dataAdult = as.data.frame(Titanic[,,1,2]+Titanic[,,2,2]) # merge adult survivors
 barplot(Freq ~ Sex + Class, data = dataAdult, legend.text = TRUE, args.legend = list(x = 'topleft',bty = "n"),
         col = c("#68829E", "#598234"),
@@ -32,6 +34,7 @@ barplot(Freq ~ Sex + Class, data = dataAdult, legend.text = TRUE, args.legend = 
         ylim = c(0,800),
         xlab = "Ticket Class")
 
+# Grouped bar plot 2
 dataAdult = as.data.frame(Titanic[,,1,1]+Titanic[,,2,1]) # merge adult survivors
 barplot(Freq ~ Sex + Class, data = dataAdult, legend.text = TRUE, args.legend = list(x = 'topleft',bty = "n"),
         col = c("#68829E", "#598234"),
