@@ -19,3 +19,5 @@ hist(x, breaks = blocks,
      border = MyColoes[1],
      col = MyColoes[2])
 
+
+# The mode of this dataset is 12 while the mean and median is 14.5 
