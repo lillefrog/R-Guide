@@ -14,7 +14,7 @@ par(mfrow=c(2,2)) #, mai = c(0.9, 0.8, 0.3, 0.1), oma = c(0.1, 0.1, 0.1, 0.1)
 total = Titanic[,1,2,1]+Titanic[,1,2,2]+Titanic[,1,1,1]+Titanic[,1,1,2]+Titanic[,2,2,1]+Titanic[,2,2,2]+Titanic[,2,1,1]+Titanic[,2,1,2]
 dataAdult = as.data.frame(total) # merge adult survivors + non survivors
 barplot(total, data = dataAdult,
-        col = MyColores[1],
+        col = MyColores[2],
         main = "People on the Titanic", 
         ylab = "Number of people", 
         xlab = "Ticket Class")
