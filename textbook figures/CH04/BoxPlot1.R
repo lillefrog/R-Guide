@@ -26,7 +26,7 @@ p <-boxplot(data2 ~ name,
         frame = FALSE,
         col = c('#EEEEEE77',MyColors[2]), # box color
         border = c('#BBBBBB77',MyColors[1]), # border of box color
-        #main = '',
+        #main = '', # title 
         xlab = '',
         ylab = 'Filtered words score',
         ylim = c(0,100),
