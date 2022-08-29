@@ -10,7 +10,7 @@ library(calendR)
 # Set the calender events, it is very important that is has the same length as
 # the calender itself or you will get a cryptic error----
 
-events <- rep(NA, 364)
+events <- rep(NA, 364) # Make a default array
 
 # First part
 events[38:51] <- "Begge"
@@ -36,7 +36,7 @@ events[seq(n1+4, n2, 7)] <- "Chr"
 
 events[359] <- "Ferie" 
 
-table(events) # summarize the number of events, can be very usefull
+table(events) # summarize the number of events, can be very useful
 
 # Plot the actual calender with the events colored ----
 
