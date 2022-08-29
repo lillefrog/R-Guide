@@ -1,10 +1,14 @@
 # box plot 2
 
+#install.packages("pBrackets")
+
+library(pBrackets)
+
+# Load my colors and set them as the palette
 MyColors = c("#115f9a", "#1984c5", "#22a7f0", "#48b5c4", "#76c68f", "#a6d75b", "#c9e52f", "#d0ee11", "#d0f400")
 palette(MyColors)
 
-# path to data, check that it is correct on your computer
-data <- read.csv("~/doc/Rcode/R-Guide/textbook figures/datasets/APD data/PatientData_extra_clean.csv", na.strings="NAN")
+# Generate data set for plotting ---- 
 
 set.seed(52)
 data1 <- rnorm(30, mean = 60, sd = 12) # generate data
@@ -12,21 +16,23 @@ data1[29] <- 15 # make outlier
 data2 <- c(data1,data1)
 name <- rep(c('Data','Plot'),c(30,30)) # make a list of 30 times "data" and 30 times "boxplot"
 
-par(mai =  c(1, 1, 1, 1))
+#png(file = "F07_BoxPlotEx1.png", units="in", width=7, height=6, res=150)
+
+# Plot the box plot and a strip chart on top of each other ----
+par(mai =  c(1, 1, 0.5, 0))
 p <-boxplot(data2 ~ name,
         boxwex = 0.8, # box width
         notch = TRUE,
         frame = FALSE,
-        col = c('#EEEEEE',MyColors[2]), # box color
-        border = c('#BBBBBB',MyColors[1]), # border of box color
-        main = 'Change in FW score with age',
+        col = c('#EEEEEE77',MyColors[2]), # box color
+        border = c('#BBBBBB77',MyColors[1]), # border of box color
+        #main = '',
         xlab = '',
         ylab = 'Filtered words score',
         ylim = c(0,100),
-        xlim = c(0.5,3.5),
+        xlim = c(0.5,3.8),
         horizontal = FALSE)
 
-# abline(h=64,lty=2, col="red")
 
 stripchart(data2 ~ name, 
            subset = name=='Data',
@@ -35,26 +41,36 @@ stripchart(data2 ~ name,
            add = TRUE, 
            pch = 19)
 
-# Add explanation to figure
 
-lines(x=c(2.01,2.7),y=c(78,91), col = "#48b5c4", lty = 1, lwd = 1)
-text(2.7,91,'Whisker',pos = 4, cex = 1.5, col = "#48b5c4")
+# Add explanation to figure ----
 
-lines(x=c(2.01,2.7),y=c(15,10), col = "#48b5c4", lty = 1, lwd = 1)
-text(2.7,10,'Outlier',pos = 4, cex = 1.5, col = "#48b5c4")
+txtSize = 1.2
+txtCol = "#990000"
 
+lines(x=c(2.01,2.7),y=c(75,83), col = txtCol, lty = 1, lwd = 1)
+text(2.7,83,'Whisker',pos = 4, cex = txtSize, col = txtCol)
 
+lines(x=c(2.41,2.7),y=c(69.4,73), col = txtCol, lty = 1, lwd = 1)
+text(2.7,73,'75th percentile',pos = 4, cex = txtSize, col = txtCol)
 
-lines(x=c(2.4,2.7),y=c(49,46), col = "#48b5c4", lty = 1, lwd = 1)
-text(2.7,46,'25th percentile',pos = 4, cex = 1.5, col = "#48b5c4")
+lines(x=c(2.52,2.7),y=c(61.3,63), col = txtCol, lty = 1, lwd = 1)
+text(2.7,63,'Notch',pos = 4, cex = txtSize, col = txtCol)
 
-lines(x=c(2.2,2.7),y=c(61,61), col = "#48b5c4", lty = 1, lwd = 1)
-text(2.7,61,'50th percentile',pos = 4, cex = 1.5, col = "#48b5c4")
+lines(x=c(2.21,2.7),y=c(61.3,53), col = txtCol, lty = 1, lwd = 1)
+text(2.7,53,'50th percentile',pos = 4, cex = txtSize, col = txtCol)
 
-lines(x=c(2.4,2.7),y=c(69,76), col = "#48b5c4", lty = 1, lwd = 1)
-text(2.7,76,'75th percentile',pos = 4, cex = 1.5, col = "#48b5c4")
+lines(x=c(2.41,2.7),y=c(49.2,43), col = txtCol, lty = 1, lwd = 1)
+text(2.7,43,'25th percentile',pos = 4, cex = txtSize, col = txtCol)
 
+lines(x=c(2.21,2.7),y=c(34.4,25), col = txtCol, lty = 1, lwd = 1)
+text(2.7,25,'Minimum value \nexcluding Outliers',pos = 4, cex = txtSize, col = txtCol)
 
+lines(x=c(2.02,2.7),y=c(15,10), col = txtCol, lty = 1, lwd = 1)
+text(2.7,10,'Outlier',pos = 4, cex = txtSize, col = txtCol)
+
+brackets(2.43, 55.5, 2.43, 67, h = -0.08, ticks = 0.5, curvature = 0.5, type = 1, col = txtCol, lwd = 1, lty = 1, xpd = FALSE)
+
+#dev.off()
 
 
 
