@@ -1,6 +1,7 @@
 # Strip Chart ----
 
 # Data fra Danmarks statestik "Voldsforbrydelser i alt" fra 2007 - 2022 Data er kun fra første kvartal
+# Data on violent crime in Denmark. Data is only for first quarter of each year
 year	<- c(2007,	2008,	2009,	2010,	2011,	2012,	2013,	2014,	2015,	2016,	2017,	2018,	2019,	2020,	2021,	2022)
 Hovedstaden	<- c(1604,	1422,	1337,	1311,	1147,	1159,	1047,	1381,	1276,	1582,	1686,	1922,	2192,	2020,	2053,	2144)
 Sjaelland	<- c(639,	566,	568,	568,	514,	543,	490,	503,	508,	686,	767,	761,	968,	969,	785,	972)
