@@ -1,11 +1,11 @@
 # scatter plot example
 
-MyColores = c("#115f9a", "#1984c5", "#22a7f0", "#48b5c4", "#76c68f", "#a6d75b", "#c9e52f", "#d0ee11", "#d0f400")
+MyColors = c("#115f9a", "#1984c5", "#22a7f0", "#48b5c4", "#76c68f", "#a6d75b", "#c9e52f", "#d0ee11", "#d0f400")
 MyTransparentCol = c("#115f9aA9", "#22a7f0A9", "#48b5c4A9", "#76c68fA9", "#a6d75b70", "#c9e52f70", "#d0ee1170", "#d0f40070")
 
 #default <- palette()
 
-palette(MyColores)
+palette(MyColors)
 
 # Load the dataset ----
 data <- read.csv("~/doc1/OUH/E07 Videnskabsteori og Statestik/Datasets/Heart disease/processed.cleveland.data", header=FALSE)
@@ -57,7 +57,7 @@ plot(age, maxHeartRate, col=as.factor(gender),
      cex = 2)
 
 legend(30, 105, legend=c("Female", "Male"), 
-       col = MyColores, 
+       col = MyColors, 
        cex = 1, # text size in legend
        pch = c(15,16), # symbol type in legend (15 for female and 16 for male)
        pt.cex = 2) # set point size in legend
@@ -78,7 +78,7 @@ plot(age, maxHeartRate, col=as.factor(gender),
      cex = 2)
 
 legend(30, 105, legend=c("Female", "Male"), 
-       col = MyColores, 
+       col = MyColors, 
        cex = 1, # text size in legend
        pch = c(15,4), # symbol type in legend (15 for female and 16 for male)
        pt.cex = 2) # set point size in legend

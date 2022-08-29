@@ -1,0 +1,11 @@
+Dataset retrived on 24/8-2022 from: https://netsg.cs.sfu.ca/youtubedata/
+
+Data is from the paper: Statistics and Social Network of YouTube Videos
+By: 
+Xu Cheng and Cameron Dale and Jiangchuan Liu
+{xuc, camerond, jcliu} @cs.sfu.ca
+School of Computing Science
+Simon Fraser University
+British Columbia, Canada
+
+To study the growth trend of the video popularity, we also updated the statistics of some previously found videos. For this crawl we only retrieve the number of views for relatively new videos (uploaded after February 15th, 2007). This crawl is performed once a week from March 5th to April 16th 2007, which results in seven datasets. The current dataset was the first one retrived.
