@@ -5,7 +5,7 @@ palette(MyColors)
 
 data <- read.csv("~/doc/Rcode/RGuide/R-Guide/textbook figures/datasets/APD data/PatientData_extra_clean.csv", na.strings="NAN")
 
-#png(file = "F02_BarCharts.png", units="in", width=7, height=4, res=150)
+#png(file = "F02_Boxplot0.png", units="in", width=7, height=4, res=150)
 par(mfrow=c(2,1), mar=c(5,5,4,2))
 # Simple box plot ----
 boxplot(FWR ~ AGE, data = data, 
@@ -57,23 +57,7 @@ lines(x=c(0.5,10.5), y=c(16.8,16.8), lty=1, col="black") # Add the last bit of t
 # ----
 
 
-# box plot with notches ----
-# Notches are used in box plots to help visually assess whether the medians of distributions differ. 
-# If the notches do not overlap, this is evidence that the medians are different.
 
-boxplot(FWR ~ AGE, data = data, 
-        subset = AGE>6 & AGE<15, 
-        boxwex = 0.8, # box width
-        notch = TRUE,
-        frame = FALSE,
-        col = c(MyColors[2]), # box color
-        border = c(MyColors[1]), # border of box color
-        horizontal = FALSE
-)
-
-
-abline(h=64,lty=2, col="red")
-abline(h=56,lty=2, col="red")
 
 
 
