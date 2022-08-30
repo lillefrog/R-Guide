@@ -11,7 +11,6 @@ Midtjylland	<- c(840,	905,	901,	901,	921,	875,	764,	769,	834,	952,	1227,	1212,	1
 Nordjylland	<- c(399,	384,	354,	382,	331,	419,	340,	317,	357,	366,	469,	436,	432,	493,	345,	534)
 stripdata <- data.frame(year,Hovedstaden, Sjaelland, Syddanmark, Midtjylland, Nordjylland)
 
-
 # load the library
 library(flextable)
 
@@ -21,7 +20,6 @@ set_flextable_defaults(
   theme_fun = theme_vanilla,
   padding = 6,
   background.color = "#FFFFEF")
-
 
 # Make the actual table ----
 ft <- flextable(stripdata) # make the main table
