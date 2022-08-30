@@ -1,4 +1,9 @@
 # Line plot ----
+# Load my colors and set them as the palette
+MyColors = c("#115f9a", "#1984c5", "#22a7f0", "#48b5c4", "#76c68f", "#a6d75b", "#c9e52f", "#d0ee11", "#d0f400")
+palette(MyColors)
+
+
 
 # Data from danmarks statestik
 year	<- c(2007,	2008,	2009,	2010,	2011,	2012,	2013,	2014,	2015,	2016,	2017,	2018,	2019,	2020,	2021,	2022)
@@ -9,14 +14,22 @@ Midtjylland	<- c(840,	905,	901,	901,	921,	875,	764,	769,	834,	952,	1227,	1212,	1
 Nordjylland	<- c(399,	384,	354,	382,	331,	419,	340,	317,	357,	366,	469,	436,	432,	493,	345,	534)
 
 # The first line has to use plot to make the figure, this also has the settings for the figure
-plot(year, Hovedstaden, type = "b", frame = FALSE, pch = 19, col = "red", xlab = "Year", ylab = "Violent crime Q1", ylim=c(1,3000),xlim=c(2006,2022))
+plot(year, Hovedstaden, 
+     type = "b", 
+     frame = FALSE, 
+     pch = 19, 
+     col = MyColors[1], 
+     xlab = "Year", 
+     ylab = "Violent crime Q1", 
+     ylim=c(1,2500),
+     xlim=c(2006,2022))
 
 # Add a more lines
-lines(year, Sjaelland, pch = 18, col = "blue", type = "b", lty = 2)
-lines(year, Syddanmark, pch = 17, col = "magenta", type = "b", lty = 3)
-lines(year, Midtjylland, pch = 16, col = "black", type = "b", lty = 4)
-lines(year, Nordjylland, pch = 15, col = "green", type = "b", lty = 5)
+lines(year, Sjaelland, pch = 18, col = MyColors[2], type = "b", lty = 2)
+lines(year, Syddanmark, pch = 17, col = MyColors[3], type = "b", lty = 3)
+lines(year, Midtjylland, pch = 16, col = MyColors[4], type = "b", lty = 4)
+lines(year, Nordjylland, pch = 15, col = MyColors[5], type = "b", lty = 5)
 
 
 # Add a legend to the plot
-legend("topleft", legend=c("Hovedstaden", "Sjaelland","Syddanmark", "Midtjylland","Nordjylland"), col=c("red", "blue","yellow","black","green"), lty = 1:5, cex=0.8)
+legend(x = 2006, y = 2500, legend=c("Hovedstaden", "Sjaelland","Syddanmark", "Midtjylland","Nordjylland"), col=MyColors, lty = 1:5, cex=0.9, pch = c(19,18,17,16,15))
