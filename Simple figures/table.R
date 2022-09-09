@@ -1,6 +1,12 @@
 # Plot a table 
+# this figure actually use the ggplot framework but is added here because it is
+# there is no way to make nice tables in base R. This means that there will be 
+# some items here that seem to make no sense unless you are used to ggplot.
+# I hope my comments might help you get started and the following link to the
+# online manual will probably help more
 # https://ardata-fr.github.io/flextable-book/index.html
-# install.packages("flextable")
+
+# install.packages("flextable") # first time you run this it might also need to install other packages
 
 # prepare a data set ----
 year	<- c(2007,	2008,	2009,	2010,	2011,	2012,	2013,	2014,	2015,	2016,	2017,	2018,	2019,	2020,	2021,	2022)
@@ -17,7 +23,7 @@ library(flextable)
 # set default settings, this is not usually necessary but can be nice ----
 set_flextable_defaults(
   font.size = 10, 
-  theme_fun = theme_vanilla,
+  theme_fun = theme_vanilla, # set default theme 
   padding = 6,
   background.color = "#FFFFEF")
 
@@ -27,7 +33,8 @@ ft <- add_header_row(ft,   # make a header
                      colwidths = c(4, 2),
                      values = c("Air quality", "Time"))
 
-ft <- theme_vanilla(ft)    # Set the theme
+ft <- theme_vanilla(ft)    # Set the theme # ggplot lets you set different themes, it can be fun to play with 
+# here are some themes you can try: theme_vanilla , theme_alafoli , theme_vader , theme_zebra , theme_tron_legacy , theme_tron , theme_booktabs , theme_apa
 
 ft <- set_caption(ft, caption = "New York Air Quality Measurements") # add a caption
 

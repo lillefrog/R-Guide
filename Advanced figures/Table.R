@@ -36,6 +36,6 @@ ft <- autofit(ft)
 ft
 
 
-print(ft, preview = "docx") # open the figure in word, often the easiest way to get it
+#print(ft, preview = "docx") # open the figure in word, often the easiest way to get it
 
 
