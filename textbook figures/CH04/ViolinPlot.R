@@ -9,16 +9,24 @@ data <- read.csv("~/Doc/OUH/E07 Videnskabsteori og Statestik/Datasets/APD data/P
 
 
 library(vioplot)
-x1 <- data$FWR[data$AGE==4]
-x2 <- data$FWR[data$AGE==6]
-x3 <- data$FWR[data$AGE==8]
-vioplot(x1, x2, x3, names=c("4 cyl", "6 cyl", "8 cyl"),
-        col="gold")
-title("Violin Plots of Miles Per Gallon")
 
+
+par(cex=1.9) # changes the default text size
 vioplot(FWR ~ AGE, data = data, 
-        subset = AGE<17, 
-        col = MyColors[3])
+        subset = AGE>6 & AGE<15,
+        drawRect = TRUE, # draw box inside plot
+        side = "both", # Draw left right or both sides of violin
+        main = "", # Title
+        cex = 1, # size of median dot
+        cex.axis = 0.8, # size of text on y axis
+        cex.lab = 3, # no effect
+        cex.names = 0.8, # size of text on x axis
+        cex.main = 2, # text size of title
+        cex.sub = 1, # no effect
+        outer = FALSE,
+        xlab = "Age (years)",
+        ylab = "Filtered Words score",
+        sub = "", # text below x label
+        frame.plot = FALSE,
+        col = MyColors[3]) # set color or colors of plot, 
 
-
-plot(1:10, 1:10, col=1:10, pch=19, cex=8, xlab="", ylab="")
