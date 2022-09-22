@@ -1,4 +1,5 @@
-# plots a simple waffel chart, this is a good alternative to a pie chart
+# plots a simple waffel chart, this is a good alternative to a pie chart, it requires 
+# ggplot but it does not use grammar of graphics notation
 # install.packages("waffle")
 
 library(waffle)
