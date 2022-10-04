@@ -6,8 +6,8 @@ MyColoes = c("#1984c5", "#22a7f0", "#48b5c4", "#76c68f", "#a6d75b", "#c9e52f", "
 
 
 # make some data
-slices <- c(11747, 6194, 4289, 3675) # size of each slice
-navn <- c("Tea", "Chocolate", "clothes", "Shoes") # name of each slice
+slices <- c(11747, 6194, 4289, 3675)               # size of each slice
+navn <- c("Tea", "Chocolate", "clothes", "Shoes")  # name of each slice
 
 # Simple Pie Chart
 pie(slices, 
