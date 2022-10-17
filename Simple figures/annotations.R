@@ -7,7 +7,7 @@ plot(1:10, main = 'demo figure',
      xlab = 'X-label',
      ylab = 'Y-label')
 
-## ADD TEXT ----
+## ADD SIMPLE TEXT ----
 # the primary function used to add text annotations to a figure is text
 # It just requires the position where you want to place your text followed by 
 # the text
@@ -20,11 +20,20 @@ text(5,3.0,'adj = 0.5',adj = 0.5) # the text is centered on the coordinates
 text(5,2.5,'adj = 1',adj = 1) # the text ends at the coordinates
 
 # it is of course also possible to change the color font and text size 
-text(2,8,'font',
+text(2,8,'fontDemo',
      col = 'red',
      family = 'serif', # this is the font the default options are "serif", "sans" and "mono"
      cex = 2, # this is the text size, 2 is twice the normal size
      font = 4) # this is type of text 1=plain, 2=bold, 3=italic, 4=bold italic, 5=? maybe symbols or greek letters
+
+# you can also insert a text that depends on the result of a calculation
+c1 = 2+2
+text(2,7,sprintf("r = %.2f", c1),
+     col = 'red',
+     family = 'serif', # this is the font the default options are "serif", "sans" and "mono"
+     cex = 2, # this is the text size, 2 is twice the normal size
+     font = 4) # this is type of text 1=plain, 2=bold, 3=italic, 4=bold italic, 5=? maybe symbols or greek letters
+
 
 
 # Sometimes you might want to add text outside the plot, this can be done with
@@ -75,6 +84,15 @@ abline(2,2, # set intercept and slope
        lty  = 1)
 
 
+## Add result of calculation and equation to plot ----
+c1 = 0.98 # calculated R squared value 
+lgnd <- bquote(italic(r)^2 == .(format(c1, digits = 6))) # insert c1 into expression
+# plot expression on plot with text function
+text(8,6,
+     as.expression(lgnd),
+     cex = 2)
+
+
 ## FANCY STUFF ----
 # If you are really fancy you can plot a linear model directly
 # I have commented this out because it opens a new figure but you can just uncomment and run it
@@ -96,5 +114,10 @@ abline(2,2, # set intercept and slope
 #                    )
 # 
 # text(9, 40, myFormula) # print the formula on the plot
+
+
+
+
+
 
 
