@@ -17,7 +17,7 @@ cholesterol <- data$V5
 maxHeartRate <- data$V8
 
 png(file = "F06_ScatterPlot.png", units="in", width=11, height=7, res=150)
-par(mfrow=c(2,2)) #, mai = c(0.9, 0.8, 0.3, 0.1), oma = c(0.1, 0.1, 0.1, 0.1)
+par(mfrow = c(2,2)) #, mai = c(0.9, 0.8, 0.3, 0.1), oma = c(0.1, 0.1, 0.1, 0.1)
 
 
 # base scatter plot ----
