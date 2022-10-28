@@ -50,5 +50,9 @@ abline(myModel)
 # REMEMBER that the values you find here are estimates, you do not know the true
 # slope or intercept and that is why they have standard errors 
 
+# we can plot diagnostic plots for the model with plot
+plot(myModel) 
+
 # youtube links
 # https://www.youtube.com/watch?v=u1cc1r_Y7M0
+
