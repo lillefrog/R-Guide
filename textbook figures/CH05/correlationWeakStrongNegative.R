@@ -1,5 +1,5 @@
-# weak and strong correlations examples
-
+# weak and strong correlations examples but now with
+# one variable reversed so the correlations are negative
 
 # set some global variables
 G_cex <- 2.7 # symbol size
@@ -8,8 +8,8 @@ G_cexLab <- 1.7 # label text size
 par(mfrow = c(2,2), mar = c(5,5,2,2)) # set figure layout and margins
 
 # perfect correlation ---- 
-benzin   <- c( 10,  15,  20,  25,  30,  35)
-afstand  <- c(205, 295, 419, 495, 605, 710) 
+benzin   <- rev(c( 10,  15,  20,  25,  30,  35))
+afstand  <- c(205, 295, 419, 495, 605, 710)
 plot(benzin, afstand, 
      main = 'Perfect correlation',
      cex.main = 2,
@@ -23,12 +23,12 @@ plot(benzin, afstand,
 
 c1 <- cor(benzin, afstand, method = 'pearson')
 lgnd <- bquote(italic(r) == .(format(c1, digits = 3)))
-text(25,400, as.expression(lgnd), cex = 2)
+text(20,300, as.expression(lgnd), cex = 2)
 
 
 # Strong correlation ---- 
 # driving in real traffic
-benzin   <- c( 12,  15,  19,  25,  32,  35)
+benzin   <- rev(c( 12,  15,  19,  25,  32,  35))
 afstand  <- c(217, 395, 345, 510, 464, 610) 
 plot(benzin, afstand, 
      main = 'Strong correlation',
@@ -42,12 +42,12 @@ plot(benzin, afstand,
 
 c1 <- cor(benzin, afstand, method = 'pearson')
 lgnd <- bquote(italic(r) == .(format(c1, digits = 3)))
-text(25,400, as.expression(lgnd), cex = 2)
+text(20,300, as.expression(lgnd), cex = 2)
 
 
 # Medium correlation ----
-motivation   <- c( 12,  15,  19,  52,  72,  90)
-score   <- c(22, 15, 55, 72, 45, 60) 
+motivation   <- rev(c( 12,  15,  19,  52,  72,  90))
+score   <- c(28, 15, 55, 72, 35, 60) 
 plot(motivation, score, 
      main = 'Medium correlation',
      cex.main = 2,
@@ -60,12 +60,12 @@ plot(motivation, score,
 
 c1 <- cor(motivation, score, method = 'pearson')
 lgnd <- bquote(italic(r) == .(format(c1, digits = 3)))
-text(60,30, as.expression(lgnd), cex = 2)
+text(40,25, as.expression(lgnd), cex = 2)
 
 
 # Weak correlation ----
-RavenScore   <- c(20, 15, 32, 26, 27, 25)
-score        <- c(52, 15, 35, 72, 45, 50) 
+RavenScore   <- rev(c(20, 15, 32, 26, 27, 25))
+score        <- c(52, 33, 39, 44, 45, 50)
 plot(RavenScore, score, 
      main = 'Weak correlation',
      cex.main = 2,
@@ -79,6 +79,6 @@ plot(RavenScore, score,
 c1 <- cor(RavenScore, score, method = 'pearson')
 #lgnd <- bquote(italic(r)^2 == .(format(c1^2, digits = 3))~~/n italic(r)) # R squared
 lgnd <- bquote(italic(r) == .(format(c1, digits = 3))) # R
-text(25,30, as.expression(lgnd), cex = 2)
+text(20,37, as.expression(lgnd), cex = 2)
 
 
