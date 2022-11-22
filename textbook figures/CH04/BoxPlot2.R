@@ -4,11 +4,12 @@
 
 data <- read.csv("~/doc/Rcode/R-Guide/textbook figures/datasets/APD data/PatientData_extra_clean.csv", na.strings="NAN")
 
+MyColors = c("#115f9a", "#1984c5", "#22a7f0", "#48b5c4", "#76c68f", "#a6d75b", "#c9e52f", "#d0ee11", "#d0f400")
 # png(file = "F07_BoxPlot2.png", units="in", width=7, height=4, res=150)
 par(mar=c(5,5,2,2))
 
 boxplot(FWR ~ AGE, data = data, 
-        subset = AGE>6 & AGE<15, 
+        subset = AGE > 6 & AGE < 15, 
         boxwex = 0.8, # box width
         notch = TRUE,
         frame = FALSE,
@@ -20,7 +21,7 @@ boxplot(FWR ~ AGE, data = data,
 )
 
 
-abline(h=64,lty=2, col="red")
-abline(h=56,lty=2, col="red")
+abline(h = 64,lty = 2, col = "red")
+abline(h = 56,lty = 2, col = "red")
 
 #dev.off()
