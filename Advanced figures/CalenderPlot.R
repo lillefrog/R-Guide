@@ -13,11 +13,11 @@ library(calendR)
 events <- rep(NA, 364) # Make a default array
 
 # First part
-events[38:51] <- "Begge"
-events[52:66] <- "Nina"
+events[30:44] <- "Begge"
+events[44:66] <- "Nina"
 
 # Second part
-n1 = 70
+n1 = 63
 n2 = 207
 events[seq(n1+0, n2, 7)] <- "Nina"
 events[seq(n1+1, n2, 7)] <- "Nina"
@@ -34,11 +34,13 @@ events[seq(n1+2, n2, 7)] <- "Chr"
 events[seq(n1+3, n2, 7)] <- "Chr"
 events[seq(n1+4, n2, 7)] <- "Chr"
 
-events[359] <- "Ferie" 
+events[c(157,158,161)] <- "Ferie" 
 
 table(events) # summarize the number of events, can be very useful
 
 # Plot the actual calender with the events colored ----
+
+unique(na.omit(events))
 
 calendR(start_date = "2022-11-01", # Custom start date
         end_date = "2023-10-30",   # Custom end date (be careful not to choose a invalid date)

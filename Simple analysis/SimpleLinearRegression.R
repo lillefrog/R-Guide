@@ -11,8 +11,9 @@ plot(myData$age,myData$height)
 
 # calculate the linear regression
 # height = slope * age + y-intercept (is what we would normally write) 
-# height = y-intercept + slope1 * age   (is how r expects it and you don't need the y-intercept)
-myModel <- lm(height ~ age, data = myData) # we use the ~ when describing the model to awoid confusion
+# In R we use a tilde to indicate that we are defining a model
+myModel <- lm(height ~ age, data = myData) # The y-intercept is automatically added
+# myModel <- lm(height ~ age + 0, data = myData) # The y-intercept removed by adding 0 (you cannot add any other values)
 
 # now we have the fitted model but we want the summary of the result
 summary(myModel)
