@@ -6,6 +6,6 @@ hist(x,
      breaks = 0:7-0.5,
      col = 'blue',                     # Color of bars
      border = 'white',                  # color of borders around bars
-     main='Events in ten army corps over 20 years',
+     main='Death by horse in the army over 20 years',
      ylab='Number of events',
      xlab ='Deaths pr year')     
