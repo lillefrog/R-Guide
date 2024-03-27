@@ -13,3 +13,4 @@ hist(x,
      xlab ='Deaths pr year')     
 
 dev.off() # enable this if you want to save a png file (first line also has to be active)
+
