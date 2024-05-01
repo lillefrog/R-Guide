@@ -1,24 +1,38 @@
-#install.packages('BlandAltmanLeh')
-#install.packages('ggthemes')
-library(BlandAltmanLeh)
-library(ggplot2)
-library(ggthemes)
+# Plotting Bland-Altman plots ----
 
-FirstTest = c(10, 15, 10, 20, 5, 10, 30, 25, 10, 50, 0, 10, 10, 20, 25, 40)
-LastTest = c(15, 20, 10, 15, 15, 10, 35, 20, 15, 40, 10, 15, 15, 25, 25, 40)
+# install.packages('BlandAltmanLeh')
+library('BlandAltmanLeh')
 
-a <- bland.altman.plot(FirstTest, LastTest, graph.sys="ggplot2",main="Example plot", geom_count = TRUE)
+# generate two random sets of data (it has to be matched number of samples)
+group1 <- rnorm(20)
+group2 <- rnorm(20)
 
-print(a + 
-        xlab("Mean score (dB)") + 
-        ylab("difference (dB)") + 
-        ggtitle("Blandt-Altman plot") + 
-        theme_stata() +
-        theme(legend.position = "right") + 
-        scale_size_area()) # scale the size of dots correctly
+# Plot simple Bland-Altman plot
+bland.altman.plot(group1, group2, xlab="mean of measurements", 
+                  ylab="differences between measurements", main="Bland-Altman Plot")
 
-#a$layers[[1]]$aes_params$colour <- "black"
-#a$layers[[1]]$aes_params$shape <- 1
-#a$layers[[1]]$aes_params$fill <- NA
-#a
+# plot more advanced Bland-Altman plot
+bland.altman.plot(group1, group2, 
+                  xlab="mean of measurements", 
+                  ylab="differences", 
+                  main="Bland-Altman Plot", 
+                  conf.int=.95, # Show the 95% confidence intervals around all lines
+                  lwd = 2, # Set the line width for the symbols
+                  pch = 6  # Symbol type 1=circle is the defalut
+                  )
+
+# calculate the stats for Bland-Altman plot
+myStats <- bland.altman.stats(group1,group2)
+
+
+
+
+# plot data with many overlapping values (shown in a sunflower plot)
+groupA <- c(1,1,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,4,4,4,5,6,6,7,7,7,7,7,7,7,7,7,7,7)
+groupB <- c(1,1,1,2,2,2,3,1,4,2,5,3,3,3,3,3,4,4,5,5,5,5,6,6,7,7,7,7,7,7,7,7,7,7,7)
+bland.altman.plot(groupA, groupB,
+                  sunflower=TRUE, 
+                  xlab="Mean",
+                  ylab="Difference",
+                  main="Bland-Altman plot with Sunflower")
 
