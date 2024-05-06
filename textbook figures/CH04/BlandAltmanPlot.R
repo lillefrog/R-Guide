@@ -6,7 +6,7 @@
 MyColores = c("#115f9a", "#1984c5", "#22a7f0", "#48b5c4", "#76c68f", "#a6d75b", "#c9e52f", "#d0ee11", "#d0f400")
 
 
-png(file = "BlandAltmanEx1.png", units="in", width=7, height=5, res=150)
+# png(file = "BlandAltmanEx1.png", units="in", width=7, height=5, res=150)
 
 # first figure ----
 # The raw data, in this demo there are a lot over duplicates to demostrate the change in
