@@ -38,4 +38,4 @@ plot(ANOVA_result)
 
 # lav en post-hoc analyse med Turky HSD hvis resultatet af ANOVA var signifikant
 
-TurkyHSD(ANOVA_result)
+TukeyHSD(ANOVA_result)
