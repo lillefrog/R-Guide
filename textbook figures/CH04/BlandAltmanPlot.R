@@ -60,4 +60,4 @@ text(7,meanDifference-textShift,sprintf(meanDifference, fmt = 'mean = %.2f'), co
 text(7,meanDifference+(sdDifference)-textShift,'+1.96*SD', col=MyColores[4])
 text(7,meanDifference-(sdDifference)-textShift,'-1.96*SD', col=MyColores[4])
 
-dev.off()
+# dev.off()
