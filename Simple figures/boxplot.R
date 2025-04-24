@@ -7,7 +7,7 @@ data <- c(data1,data2)                   # combine the data into one long list
 name <- rep(c('Data1','Data2'),c(30,30)) # make a list of 30 times "data" and 30 times "boxplot"
 
 
-# Plot the box plot and a strip chart on top of each other ----
+# Plot the box plot ----
 # par(mai =  c(1, 1, 0.5, 0))
 p <-boxplot(data ~ name,
             boxwex = 0.8,             # box width
