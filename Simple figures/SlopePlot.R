@@ -1,9 +1,10 @@
 # Slightly advanced slope plot
 # Sample data set insert your own data here
+
 myData <- data.frame(
-  Name = c("A", "B", "C", "D"),
-  Value1 = c(10, 20, 15, 25),
-  Value2 = c(15, 18, 22, 20)
+  Name = c("A", "B", "C", "D"),   # Name of each data point0
+  Value1 = c(10, 20, 15, 25),     # First set of values (often the before values)
+  Value2 = c(15, 18, 22, 20)      # second set of values (often the after values)
 )
 
 # Set up the plot window with extra x-margin and no x-axis
