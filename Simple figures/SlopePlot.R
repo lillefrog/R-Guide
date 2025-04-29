@@ -2,7 +2,7 @@
 # Sample data set insert your own data here
 
 myData <- data.frame(
-  Name = c("A", "B", "C", "D"),   # Name of each data point0
+  Name = c("A", "B", "C", "D"),   # Name of each data point
   Value1 = c(10, 20, 15, 25),     # First set of values (often the before values)
   Value2 = c(15, 18, 22, 20)      # second set of values (often the after values)
 )
